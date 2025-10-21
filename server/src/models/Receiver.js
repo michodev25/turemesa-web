@@ -7,8 +7,7 @@ const Receiver = sequelize.define("Receiver", {
   name: { type: DataTypes.STRING, allowNull: false },
   last_name: { type: DataTypes.STRING, allowNull: false },
   address: { type: DataTypes.STRING, allowNull: false },
-  identity_id: { type: DataTypes.STRING, allowNull: false },
-  country: { type: DataTypes.STRING, allowNull: false },
+  identity_id: { type: DataTypes.STRING, allowNull: false }
 }, { timestamps: true });
 
 Receiver.belongsTo(User, { foreignKey: "user_id" });

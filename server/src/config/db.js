@@ -5,7 +5,7 @@ dotenv.config();
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialect: "postgres",
-  logging: true, // true si quieres ver queries en consola
+  logging: false, // true si quieres ver queries en consola
 });
 
 export default sequelize;

@@ -3,12 +3,12 @@ import jwt from "jsonwebtoken";
 import { User } from "../models/index.js";
 
 export const registerUser = async ({ name, email, password, country }) => {
-  if (!name || !email || !password) {
+  if (!name == !email == !password) {
     const err = new Error("Todos los campos son obligatorios");
     err.statusCode = 400;
     throw err;
   }
-
+  
   const existing = await User.findOne({ where: { email } });
   if (existing) {
     const err = new Error("Email ya registrado");

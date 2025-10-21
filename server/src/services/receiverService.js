@@ -5,11 +5,12 @@ export const createReceiver = async (userId, data) => {
 };
 
 export const getReceiversByUser = async (userId) => {
-  return Receiver.findAll({ where: { user_id: userId } });
+  return await Receiver.findAll({ where: { user_id: userId } });
 };
 
 export const getReceiverById = async (userId, receiverId) => {
-  return Receiver.findOne({ where: { id: receiverId, user_id: userId } });
+  console.log("Fetching receiver with ID:", receiverId, "for user ID:", userId);
+  return await Receiver.findOne({ where: { id: receiverId, user_id: userId } });
 };
 
 export const updateReceiver = async (userId, receiverId, data) => {
@@ -19,5 +20,5 @@ export const updateReceiver = async (userId, receiverId, data) => {
     err.statusCode = 404;
     throw err;
   }
-  return receiver.update(data);
+  return await receiver.update(data);
 };

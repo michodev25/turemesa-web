@@ -5,6 +5,7 @@ import authRoutes from "./routes/authRoutes.js";
 import receiverRoutes from "./routes/receiverRoutes.js";
 import remittanceRoutes from "./routes/remittanceRoutes.js";
 import { syncDB } from "./models/index.js";
+import { notFound } from "./middlewares/notFoundMiddleware.js";
 
 const app = express();
 dotenv.config();
@@ -17,6 +18,8 @@ syncDB();
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/receivers", receiverRoutes);
 app.use("/api/v1/remittances", remittanceRoutes);
+// rutas no encontradas
+app.use(notFound);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
