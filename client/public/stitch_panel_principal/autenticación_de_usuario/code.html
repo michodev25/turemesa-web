@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Remesas Internacionales - Autenticación</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#007AFF", // Azul corporativo
+            "background-light": "#f5f7f8",
+            "background-dark": "#101c22",
+          },
+          fontFamily: {
+            "display": ["Manrope", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#333333] dark:text-white">
+  <div
+    class="relative flex h-auto min-h-screen w-full flex-col items-center justify-center bg-white group/design-root overflow-x-hidden p-4 sm:p-6 lg:p-8"
+    style='font-family: Manrope, "Noto Sans", sans-serif;'>
+    <div class="w-full max-w-md">
+      <div class="flex px-4 py-3">
+        <div class="flex h-10 flex-1 items-center justify-center rounded-lg bg-[#f0f3f5] p-1">
+          <label
+            class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-[#111618] text-[#607c8a] text-sm font-medium leading-normal">
+            <span class="truncate">Iniciar Sesión</span>
+            <input checked="" class="invisible w-0" name="auth-toggle" type="radio" value="Log In" />
+          </label>
+          <label
+            class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-[#111618] text-[#607c8a] text-sm font-medium leading-normal">
+            <span class="truncate">Registrarse</span>
+            <input class="invisible w-0" name="auth-toggle" type="radio" value="Sign Up" />
+          </label>
+        </div>
+      </div>
+      <!-- Login Form -->
+      <div class="space-y-6 px-4 py-3">
+        <h2 class="text-2xl font-bold text-center text-[#111618]">Iniciar Sesión</h2>
+        <div class="flex max-w-[480px] flex-wrap items-end gap-4">
+          <label class="flex flex-col min-w-40 flex-1">
+            <p class="text-[#111618] text-base font-medium leading-normal pb-2">Correo electrónico o nombre de usuario
+            </p>
+            <div class="flex w-full flex-1 items-stretch rounded-lg">
+              <input
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111618] focus:outline-0 focus:ring-0 border border-[#dbe2e6] bg-white focus:border-primary h-14 placeholder:text-[#607c8a] p-[15px] rounded-r-none border-r-0 pr-2 text-base font-normal leading-normal"
+                placeholder="Introduce tu correo o usuario" value="" />
+              <div
+                class="text-[#607c8a] flex border border-[#dbe2e6] bg-white items-center justify-center pr-[15px] rounded-r-lg border-l-0">
+                <span class="material-symbols-outlined" style="font-size: 24px;">person</span>
+              </div>
+            </div>
+          </label>
+        </div>
+        <div class="flex max-w-[480px] flex-wrap items-end gap-4">
+          <label class="flex flex-col min-w-40 flex-1">
+            <p class="text-[#111618] text-base font-medium leading-normal pb-2">Contraseña</p>
+            <div class="flex w-full flex-1 items-stretch rounded-lg">
+              <input
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111618] focus:outline-0 focus:ring-0 border border-[#dbe2e6] bg-white focus:border-primary h-14 placeholder:text-[#607c8a] p-[15px] rounded-r-none border-r-0 pr-2 text-base font-normal leading-normal"
+                placeholder="Introduce tu contraseña" type="password" value="" />
+              <div
+                class="text-[#607c8a] flex border border-[#dbe2e6] bg-white items-center justify-center pr-[15px] rounded-r-lg border-l-0">
+                <span class="material-symbols-outlined cursor-pointer" style="font-size: 24px;">visibility_off</span>
+              </div>
+            </div>
+          </label>
+        </div>
+        <p class="text-primary text-sm font-normal leading-normal pb-3 pt-1 px-4 underline cursor-pointer text-right">
+          ¿Olvidaste tu contraseña?</p>
+        <div class="flex px-4 py-3">
+          <button
+            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 flex-1 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-blue-600 transition-colors">
+            <span class="truncate">Iniciar Sesión</span>
+          </button>
+        </div>
+      </div>
+      <!-- Registration Form (Initially hidden) -->
+      <div class="space-y-6 px-4 py-3 hidden">
+        <h2 class="text-2xl font-bold text-center text-[#111618]">Crear Cuenta</h2>
+        <div class="flex max-w-[480px] flex-wrap items-end gap-4">
+          <label class="flex flex-col min-w-40 flex-1">
+            <p class="text-[#111618] text-base font-medium leading-normal pb-2">Nombre completo</p>
+            <div class="flex w-full flex-1 items-stretch rounded-lg">
+              <input
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111618] focus:outline-0 focus:ring-0 border border-[#dbe2e6] bg-white focus:border-primary h-14 placeholder:text-[#607c8a] p-[15px] text-base font-normal leading-normal"
+                placeholder="Introduce tu nombre completo" />
+            </div>
+          </label>
+        </div>
+        <div class="flex max-w-[480px] flex-wrap items-end gap-4">
+          <label class="flex flex-col min-w-40 flex-1">
+            <p class="text-[#111618] text-base font-medium leading-normal pb-2">Correo electrónico</p>
+            <div class="flex w-full flex-1 items-stretch rounded-lg">
+              <input
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111618] focus:outline-0 focus:ring-0 border border-[#dbe2e6] bg-white focus:border-primary h-14 placeholder:text-[#607c8a] p-[15px] text-base font-normal leading-normal"
+                placeholder="Introduce tu correo electrónico" />
+            </div>
+          </label>
+        </div>
+        <div class="flex max-w-[480px] flex-wrap items-end gap-4">
+          <label class="flex flex-col min-w-40 flex-1">
+            <p class="text-[#111618] text-base font-medium leading-normal pb-2">Crear contraseña</p>
+            <div class="flex w-full flex-1 items-stretch rounded-lg">
+              <input
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111618] focus:outline-0 focus:ring-0 border border-[#dbe2e6] bg-white focus:border-primary h-14 placeholder:text-[#607c8a] p-[15px] text-base font-normal leading-normal"
+                placeholder="Crea una contraseña segura" type="password" />
+            </div>
+          </label>
+        </div>
+        <div class="flex max-w-[480px] flex-wrap items-end gap-4">
+          <label class="flex flex-col min-w-40 flex-1">
+            <p class="text-[#111618] text-base font-medium leading-normal pb-2">Confirmar contraseña</p>
+            <div class="flex w-full flex-1 items-stretch rounded-lg">
+              <input
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111618] focus:outline-0 focus:ring-0 border border-[#dbe2e6] bg-white focus:border-primary h-14 placeholder:text-[#607c8a] p-[15px] text-base font-normal leading-normal"
+                placeholder="Confirma tu contraseña" type="password" />
+            </div>
+          </label>
+        </div>
+        <div class="flex items-center px-4">
+          <input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" id="terms" type="checkbox" />
+          <label class="ml-2 block text-sm text-[#607c8a]" for="terms">
+            Acepto los <a class="font-medium text-primary hover:underline" href="#">Términos y Condiciones</a>
+          </label>
+        </div>
+        <div class="flex px-4 py-3">
+          <button
+            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 flex-1 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-blue-600 transition-colors">
+            <span class="truncate">Registrarse</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const authToggle = document.querySelectorAll('input[name="auth-toggle"]');
+      const loginForm = document.querySelector('.space-y-6.px-4.py-3:not(.hidden)');
+      const registerForm = document.querySelector('.space-y-6.px-4.py-3.hidden');
+
+      authToggle.forEach(toggle => {
+        toggle.addEventListener('change', function () {
+          if (this.value === 'Log In') {
+            loginForm.classList.remove('hidden');
+            registerForm.classList.add('hidden');
+          } else {
+            loginForm.classList.add('hidden');
+            registerForm.classList.remove('hidden');
+          }
+        });
+      });
+
+      // Initially hide the register form
+      if (document.querySelector('input[name="auth-toggle"][value="Log In"]').checked) {
+        registerForm.classList.add('hidden');
+      } else {
+        loginForm.classList.add('hidden');
+      }
+
+      // Password visibility toggle
+      const passwordToggles = document.querySelectorAll('.material-symbols-outlined.cursor-pointer');
+      passwordToggles.forEach(toggle => {
+        toggle.addEventListener('click', function () {
+          const passwordInput = this.previousElementSibling;
+          if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            this.textContent = 'visibility';
+          } else {
+            passwordInput.type = 'password';
+            this.textContent = 'visibility_off';
+          }
+        });
+      });
+
+    </script>
+  </div>
+</body>
+
+</html>

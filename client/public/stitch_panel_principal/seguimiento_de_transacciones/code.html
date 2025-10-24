@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Historial de Transacciones</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#007AFF",
+            "background-light": "#f5f7f8",
+            "background-dark": "#101c22",
+          },
+          fontFamily: {
+            "display": ["Manrope", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="text-gray-800 dark:text-gray-200 flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</div>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Historial de transacciones</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-transparent text-gray-800 dark:text-gray-200">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+</div>
+</div>
+<div class="flex gap-3 p-4 overflow-x-auto whitespace-nowrap">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white px-4">
+<p class="text-sm font-medium leading-normal">Todo</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-200 dark:bg-gray-700 px-4">
+<p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">Completado</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-200 dark:bg-gray-700 px-4">
+<p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">En proceso</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-200 dark:bg-gray-700 px-4">
+<p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">Fallido</p>
+</button>
+</div>
+<div class="px-4 space-y-4 pb-4">
+<div class="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-xl min-h-[72px] justify-between shadow-sm">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14" data-alt="Profile picture of Juan Pérez" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKhcJPjECdq5qXIhUW-Gp_MWowb_7Q4_RxGUcVjYe6J6vbkMI9ykgEovPO4vHfsZVAd6677Fh3MoCfDTxLpoVZp69hAKMScaqQUCoQAUqGlBcN6tDVHs3SSIARHSmCk33w5JxOVO-19RnlBqjtuaCG2DTp2UQ_D2YbSfBPaT9oFGJ-G_lgkKo6U-hSO1WregvIbLXeATNqPyZkCZiY3lOMHYCTI_p4FM1JLW9IF5SMb7MGUDrc-qNxHKmnJ7D2o85Jhm8Jbf4uoV9f");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Para: Juan Pérez</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-2">1,000 USD → 950 EUR</p>
+<p class="text-sm font-normal leading-normal line-clamp-2 flex items-center gap-1.5"><span class="material-symbols-outlined text-base text-[#34C759]">check_circle</span> <span class="text-[#34C759]">Completado</span> - 15 de Mayo, 2024</p>
+</div>
+</div>
+<div class="shrink-0">
+<button class="flex items-center justify-center h-8 w-8 rounded-full text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined text-xl">more_horiz</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-xl min-h-[72px] justify-between shadow-sm">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14" data-alt="Profile picture of María García" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJrXiZ3_IpH93fxic05C9db9FVYu1rllJi_uWSrMTFqQON4S1AC5YjQOIdgzcD841NK3ql-QaICsMSZwoRHfbOxXkyOSUvcTkFX1KR7GCsyKOcnoB6UhXGLPVSxZIxKlNstlNJy4swnT7RQD1dQJkMITsOVhS4fZpUDetcJAztQauNlmqIv8r6lzuTBHLOGmGc2BH_TbiHVXRLjgTxs135d0RiVujdjOfSngNBYdmCY29XGGl7M8f-LAeMZXZBVOCAUEnrCgR3UBR6");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Para: María García</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-2">500 USD → 475 EUR</p>
+<p class="text-sm font-normal leading-normal line-clamp-2 flex items-center gap-1.5"><span class="material-symbols-outlined text-base text-[#FF9500]">hourglass_empty</span> <span class="text-[#FF9500]">En proceso</span> - 14 de Mayo, 2024</p>
+</div>
+</div>
+<div class="shrink-0">
+<button class="flex items-center justify-center h-8 w-8 rounded-full text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined text-xl">more_horiz</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-xl min-h-[72px] justify-between shadow-sm">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14" data-alt="Profile picture of Carlos Sánchez" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAS5I-jFKvDyVtBxo2tFC2_gWUqmmpJKVb0om73jbOi64X1hfQDY4b7fHLwPKJ5HDtmZUBwozExbYIz7SZCbEPvKMgroAVyuGRubd_sYfxXCV6gUG3I_m5ffJSFKhXFjYKHVzPLMtmMGN0TB4cmdyi1uirwBp7t8E1mQNfskxe9t6yH-NoZOP3j-vFGSir0_rLeBS-DGgdy2frV-IZTaoUuGpJ6W13Lyyf1RbVl75ENc9TLLhctHyKcRtqHyGlNhwSuXcXYko40coI4");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Para: Carlos Sánchez</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-2">200 USD → 190 EUR</p>
+<p class="text-sm font-normal leading-normal line-clamp-2 flex items-center gap-1.5"><span class="material-symbols-outlined text-base text-[#FF3B30]">cancel</span> <span class="text-[#FF3B30]">Fallido</span> - 12 de Mayo, 2024</p>
+</div>
+</div>
+<div class="shrink-0">
+<button class="flex items-center justify-center h-8 w-8 rounded-full text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined text-xl">more_horiz</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-xl min-h-[72px] justify-between shadow-sm">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14" data-alt="Profile picture of Ana Martínez" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDRJFVHAsgcmOSFqRyx-19NtQjijC1jh9vpVtCsj-njDNXRdG_eAxEn4JJ6jVTo1RQqSIJ2I5MmStm5J5XritMkkGBB1CrbaYRJPJvPRPhrQUBXw2bsSjOb118wkz24SyxmlTRYXUzsib1ywrbEucl33LGHhGB_hBRhOchs5Ju3F5JLjNQ2EmiSv0rqA7npfOMdWnbInbsSrHzk67OW1SQ2tCTpYtMg7rHuu__QZYeqKiI6d8E0wL1OLF57QuGegHaKVY7zS_GpnE7E");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Para: Ana Martínez</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-2">1500 USD → 1420 EUR</p>
+<p class="text-sm font-normal leading-normal line-clamp-2 flex items-center gap-1.5"><span class="material-symbols-outlined text-base text-[#34C759]">check_circle</span> <span class="text-[#34C759]">Completado</span> - 10 de Mayo, 2024</p>
+</div>
+</div>
+<div class="shrink-0">
+<button class="flex items-center justify-center h-8 w-8 rounded-full text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined text-xl">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

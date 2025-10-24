@@ -9,3 +9,4 @@ node_modules
 .github\instructions\codacy.instructions.md
 
 /src/generated/prisma
+en español.txt

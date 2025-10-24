@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enviar Dinero</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#28A745",
+            "background-light": "#F2F2F7",
+            "background-dark": "#101c22",
+            "text-dark": "#1C1C1E"
+          },
+          fontFamily: {
+            "display": ["Manrope", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined text-text-dark dark:text-white">arrow_back</span>
+</div>
+<h2 class="text-text-dark dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Enviar Dinero</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-text-dark dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined">history</span>
+</button>
+</div>
+</div>
+<main class="flex-1 px-4 py-6">
+<div class="p-4 @container">
+<div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start shadow-[0_0_4px_rgba(0,0,0,0.1)] bg-white dark:bg-gray-800">
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-2 py-4 @xl:px-4 px-4">
+<p class="text-text-dark dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Tipo de Cambio en Tiempo Real</p>
+<div class="flex items-end gap-3 justify-between">
+<p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">1 USD = 19.50 MXN</p>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-primary/20 text-primary text-sm font-medium leading-normal gap-2">
+<span class="material-symbols-outlined !text-base">refresh</span>
+<span class="truncate">Actualizar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 px-4 py-3">
+<div class="flex flex-wrap items-end gap-4">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-text-dark dark:text-white text-base font-medium leading-normal pb-2">Tú envías</p>
+<div class="relative">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-dark dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-white dark:bg-gray-800 h-14 placeholder:text-gray-500 dark:placeholder:text-gray-400 p-4 text-base font-normal leading-normal pr-20" placeholder="1,000.00" value="1,000.00"/>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3">
+<span class="text-text-dark dark:text-white font-semibold">USD</span>
+</div>
+</div>
+</label>
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-text-dark dark:text-white text-base font-medium leading-normal pb-2">El destinatario recibe</p>
+<div class="relative">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-dark dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-white dark:bg-gray-800 h-14 placeholder:text-gray-500 dark:placeholder:text-gray-400 p-4 text-base font-normal leading-normal pr-20" placeholder="19,500.00" value="19,500.00"/>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3">
+<span class="text-text-dark dark:text-white font-semibold">MXN</span>
+</div>
+</div>
+</label>
+</div>
+</div>
+<h3 class="text-text-dark dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Información del Destinatario</h3>
+<div class="flex flex-col gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-text-dark dark:text-white text-base font-medium leading-normal pb-2">Nombre(s)</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-dark dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-white dark:bg-gray-800 h-14 placeholder:text-gray-500 dark:placeholder:text-gray-400 p-4 text-base font-normal leading-normal" placeholder="John" value=""/>
+</label>
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-text-dark dark:text-white text-base font-medium leading-normal pb-2">Apellidos</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-dark dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-white dark:bg-gray-800 h-14 placeholder:text-gray-500 dark:placeholder:text-gray-400 p-4 text-base font-normal leading-normal" placeholder="Doe" value=""/>
+</label>
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-text-dark dark:text-white text-base font-medium leading-normal pb-2">Dirección</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-dark dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-white dark:bg-gray-800 h-14 placeholder:text-gray-500 dark:placeholder:text-gray-400 p-4 text-base font-normal leading-normal" placeholder="Av. Siempre Viva 123" value=""/>
+</label>
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-text-dark dark:text-white text-base font-medium leading-normal pb-2">DNI / Cédula</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-dark dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-white dark:bg-gray-800 h-14 placeholder:text-gray-500 dark:placeholder:text-gray-400 p-4 text-base font-normal leading-normal" placeholder="12345678X" value=""/>
+</label>
+</div>
+<div class="px-4 py-6">
+<button class="flex w-full max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-4 bg-primary text-white text-lg font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Enviar Dinero</span>
+</button>
+</div>
+</main>
+<!-- Modal de Confirmación -->
+<div class="fixed inset-0 z-20 flex items-center justify-center bg-black/50 hidden">
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 w-full max-w-sm m-4">
+<h3 class="text-text-dark dark:text-white text-xl font-bold mb-4">Confirmar Envío</h3>
+<p class="text-gray-600 dark:text-gray-300 mb-6">Estás a punto de enviar <span class="font-bold text-text-dark dark:text-white">1,000.00 USD</span> a <span class="font-bold text-text-dark dark:text-white">John Doe</span>.</p>
+<div class="space-y-2 text-gray-500 dark:text-gray-400">
+<div class="flex justify-between"><span>Tasa de cambio:</span><span>1 USD = 19.50 MXN</span></div>
+<div class="flex justify-between"><span>Comisión:</span><span>5.00 USD</span></div>
+<div class="flex justify-between font-bold text-text-dark dark:text-white"><span>Total a pagar:</span><span>1,005.00 USD</span></div>
+</div>
+<div class="mt-8 flex justify-end gap-4">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-gray-200 dark:bg-gray-700 text-text-dark dark:text-white text-sm font-medium">Cancelar</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-medium">Confirmar</button>
+</div>
+</div>
+</div>
+<!-- Animación de Confeti y Pantalla de Éxito -->
+<div class="fixed inset-0 z-30 flex flex-col items-center justify-center bg-background-light dark:bg-background-dark hidden">
+<div class="absolute inset-0" id="confetti-container">
+<!-- Confetti JS will render here -->
+</div>
+<div class="text-center z-10 p-8">
+<span class="material-symbols-outlined text-primary text-8xl mb-4">task_alt</span>
+<h2 class="text-3xl font-bold text-text-dark dark:text-white mb-2">¡Envío Exitoso!</h2>
+<p class="text-lg text-gray-600 dark:text-gray-300 mb-8">Tu dinero está en camino.</p>
+<div class="flex flex-col gap-4">
+<button class="flex w-full max-w-xs mx-auto cursor-pointer items-center justify-center rounded-xl h-12 px-6 bg-primary text-white text-lg font-bold">Ver Recibo</button>
+<button class="flex w-full max-w-xs mx-auto cursor-pointer items-center justify-center rounded-xl h-12 px-6 bg-transparent text-primary text-lg font-medium border-2 border-primary">Volver al Inicio</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>
