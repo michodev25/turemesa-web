@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
 import { User } from "../models/index.js";
+import { generateToken } from "../utils/generateToken.js";
 
 export const registerUser = async ({ name, email, password, country }) => {
   if (!name == !email == !password) {
@@ -15,9 +15,10 @@ export const registerUser = async ({ name, email, password, country }) => {
     err.statusCode = 400;
     throw err;
   }
-
   const hashed = await bcrypt.hash(password, 10);
-  return User.create({ name, email, password: hashed, country });
+  const newUser = await User.create({ name, email, password: hashed, country });
+  const token = await generateToken(newUser.id)
+  return { user: newUser, token };
 };
 
 export const loginUser = async ({ email, password }) => {
@@ -35,6 +36,6 @@ export const loginUser = async ({ email, password }) => {
     throw err;
   }
 
-  const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: "1d" });
+  const token = await generateToken(user.id)
   return { user, token };
 };

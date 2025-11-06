@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
-import { PersonIcon, VisibilityIcon, VisibilityOffIcon } from '../utils/svgs';
+import {
+    PersonIcon,
+    VisibilityIcon,
+    VisibilityOffIcon
+} from '../utils/svgs.jsx';
 
 function Login() {
     const [showPassword, setShowPassword] = useState(false);
