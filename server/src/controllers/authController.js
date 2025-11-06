@@ -1,3 +1,4 @@
+import e from "express";
 import { registerUser, loginUser } from "../services/authService.js";
 
 export const register = async (req, res) => {
@@ -21,3 +22,11 @@ export const login = async (req, res) => {
     res.status(401).json({ error: err.message });
   }
 };
+
+export const logout = (req, res) => {
+  res.cookie('token', '', {
+    expires: new Date(0),
+  })
+  res.json({ message: "Usuario desconectado" });
+};
+
